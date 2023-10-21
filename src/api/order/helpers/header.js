@@ -7,6 +7,6 @@ const generateToken = () => {
 };
 
 exports.xenditHeaders = {
-  Authprization: "Basic " + generateToken(),
+  Authorization: "Basic " + generateToken(),
   "Content-Type": "application/json",
 };

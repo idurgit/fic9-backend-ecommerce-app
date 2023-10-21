@@ -15,13 +15,16 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     const { default: axios } = require("axios");
     const { xenditHeaders } = require("../helpers/header.js");
 
+    console.log(xenditHeaders);
+
     const payload = {
-      external_id: result.data.id.toString,
+      external_id: result.data.id.toString(),
       payer_email: "codewithbahri@gmail.com",
       description: "Payment for product",
-      amount: result.data.attibutes.totalPrice,
+      amount: result.data.attributes.totalPrice,
     };
 
+    console.log(payload);
     const response = await axios({
       method: "POST",
       url: "https://api.xendit.co/v2/invoices",
